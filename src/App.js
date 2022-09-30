@@ -1,19 +1,20 @@
-import React from "react";
-import logo from "./queeery-logo.png";
-import "./App.css";
-
+import './App.css';
+import Home from './Components/Home';
+import Menu from './Components/Menu';
+import Navigation from './Components/Navigation';
+import { Routes, Route } from 'react-router-dom';
+import Modal from './Components/Modal'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> <br />
-          have fun and be creative!
-        </p>
-      </header>
-    </div>
-  );
+	return (
+		<main className='main'>
+			<Navigation />
+			<Modal />
+			<Routes>
+				<Route path='/' element={<Home />}></Route>
+				<Route path='/menu' element={<Menu />}></Route>
+			</Routes>
+		</main>
+	);
 }
 
 export default App;
