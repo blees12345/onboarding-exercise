@@ -1,9 +1,13 @@
-import React from 'react';
+import {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import movies from '../movies';
+import MovieCard from './MoviesCards'
 function Home(props) {
+   
+    
     return (
         <div className='home'>
-            <h1></h1>
+            <MovieCard details={movies}></MovieCard>
         </div>
     );
 }

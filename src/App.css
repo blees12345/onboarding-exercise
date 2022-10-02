@@ -45,6 +45,76 @@
   width: 40vw;
 
 }
+.modal-logo{
+
+  width: 50vw;
+  display: flex;
+  }
+
 .modal{
   background-color: #b118a7;
+  display: flex;
+ height: 100vh;
+ padding-top: 10vh;
+}
+
+.modal-container{
+  
+  display: flex;
+  justify-content: center;
+  background-color:#b118a7;
+  animation-name: example;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  from {
+    background-color: #b118a7;
+  }
+
+  to {
+    background-color: rgb(255, 255, 255);
+  }
+}
+.cards{
+display: flex;
+flex-wrap: wrap;
+width: 80vw;
+justify-content: center;
+align-content: center;
+gap: 10px;
+}
+.cards>* {
+  flex: 1 1 160px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+  max-width: 200px;
+  
+}
+.categories{
+  font-size: 100px;
+  background-color: red;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (min-width: 700px) {
+  .cards {
+    max-width: 60vw;
+  }
+}
+.likes{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.likeButton{
+ border: 10px solid green;
 }

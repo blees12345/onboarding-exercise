@@ -8,14 +8,20 @@ function Example() {
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-
+    setTimeout(() => {
+			handleClose();
+		}, 4000);
 	return (
 		<div className='modal'>
 			<Modal show={show} onHide={handleClose}>
-				<img className='modal-logo' src={logo}></img>
+				<div className='modal-container'>
+					<img className='modal-logo' alt='logo' src={logo}></img>
+				</div>
+
 				<Button variant='secondary' onClick={handleClose}>
 					Lets check out some movies!
 				</Button>
+				<div></div>
 			</Modal>
 		</div>
 	);
