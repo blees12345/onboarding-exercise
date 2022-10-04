@@ -22,12 +22,7 @@ function ColorSchemesExample() {
 								<Nav.Link href='#home'>Home</Nav.Link>
 							</LinkContainer>
 						</Link>
-						<Link to={Categories}>
-							<LinkContainer to='./Categories'>
-								<Categories/>
-							</LinkContainer>
-						</Link>
-
+						
 					</Nav>
 				</Container>
 			</Navbar>

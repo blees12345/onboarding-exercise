@@ -1,15 +1,31 @@
-import React,{useState}from 'react';
+import React,{useState,useEffect}from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Movies from '../movies'
+import { useRef } from 'react';
+
 const MoviesCards = (props) => {
-	 const [like, setLike] = useState({Movies});
+	 const [like, setLike] = useState([]);
+useEffect(() => {
+	setLike(props.details);
+}, []);
+  const ref = useRef(null);
+
+  function incrementVote(e){
+	console.log(e.Target.index);
 	
-	const handleLike = (value) => {
-		setLike(like +1)
-		setLike(current =>[...current,value])
-		console.log(value)
-		};
+		if (like.id === e.currentTarget) {
+			like.votes = like.votes + 1;
+		}
+		return like;
+	  
+	};
+	let decrementVote = () => {
+		setLike(like - 1);
+		setLike({ ...like, votes: like });
+	};
+	
+
+		console.log(props.details.id)
 		
 	return (
 		<div className='card-container'>
@@ -22,13 +38,14 @@ const MoviesCards = (props) => {
 						</Card.Body>
 						<Card.Img alt='pic' src={value.url}></Card.Img>
 						<div className='likes'>
-							<Button className='likeButton' onClick={() => handleLike(value.likes + 1)} >
+							<Button className='likeButton'  onClick={incrementVote}>
 								+
 							</Button>
 							<p>Likes:{value.likes}</p>
 							<p>Dislikes:{value.dislikes}</p>
 							<Button className='likeButton'>-</Button>
 						</div>
+						
 					</Card>
 				))}
 			</div>
